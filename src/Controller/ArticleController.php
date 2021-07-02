@@ -22,9 +22,34 @@ class ArticleController
      */
     public function article($id)
     {
-        return new Response($id);
+//creation d un tableau avec les infos
+        $articles = [
+            1 => [
+                "title" => "La vaccination c'est trop géniale",
+                "content" => "bablablblalba",
+                "id" => 1
+            ],
+            2 => [
+                "title" => "La vaccination c'est pas trop géniale",
+                "content" => "blablablabla",
+                "id" => 2
+            ],
+            3 => [
+                "title" => "Balkany c'est trop génial",
+                "content" => "balblalblalb",
+                "id" => 3
+            ],
+            4 => [
+                "title" => "Balkany c'est pas trop génial",
+                "content" => "balblalblalb",
+                "id" => 4
+            ]
+        ];
+//creation d'une variable article pour designer la key qui va permettre de recuperer un article en fonction de son id
+        $article = $articles[$id];
+//renvoi de la reponse en affichant le titre de l article en fonction de l id ajouté à l url
+        return new Response($article['title']);
     }
-
 
 }
 
