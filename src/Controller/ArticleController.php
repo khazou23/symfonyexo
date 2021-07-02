@@ -8,12 +8,21 @@ class ArticleController
 {
     /*Annotation pour lier avec url*/
     /**
-     * @Route("/articles" , name="article")
+     * @Route("/liste" , name="liste")
      */
-    public function listeArticles()
+    public function liste()
     {
         /*envoi de la reponse http avec la classe Response hhtpfoundation*/
-        return Response('Ma liste d\'article');
+        return new Response('Ma liste d\'article');
+    }
+
+    //création de la page article  pour afficher les articles
+    /**
+     * @Route ("/article/{id}" , name="article")
+     */
+    public function article($id)
+    {
+        return new Response($id);
     }
 
 
