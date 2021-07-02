@@ -1,0 +1,22 @@
+header, footer{
+    background-color: darkcyan;
+    height: 100px;
+    color: white;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+   align-items: center;
+}
+
+main {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+}
+article {
+    width: 40%;
+    text-align: center;
+    margin: 40px 0;
+    border: solid 2px darkcyan;
+}
+
