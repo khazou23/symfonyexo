@@ -1,17 +1,34 @@
-<!--appel du fichier partiel contenant le header avec la fonction include-->
-{% include '_header.html.twig' %}
+{#appel du fichier partiel contenant le header avec la fonction include #}
+{# {% include '_header.html.twig' %} #}
+
+{#mise en place de l heritage du gabarit #}
+{% extends 'base.html.twig' %}
+
+{#appel du block metatitle #}
+{% block metatitle %}
+    Ma liste d'article
+{% endblock metatitle %}
+
+{#appel du block main #}
+{% block main %}
     <main>
-    <!--mise en place d une boucle for pour afficher tous les articles de la liste -->
+   {# mise en place d une boucle for pour afficher tous les articles de la liste #}
         {% for article in articles %}
         <article>
-            <!--Creation d un lien avec la fonction path pour rediriger vers une adresse URL -->
+            {# Creation d un lien avec la fonction path pour rediriger vers une adresse URL #}
             <a href={{ path('article', {'id': article.id}) }}>
             <h1>{{ article.title }}</h1>
             <p>{{ article.content}} </p>
             </a>
         </article>
-        {% endfor %} <!--cloture de la boucle for -->
+        {% endfor %} {# cloture de la boucle for #}
     </main>
+{% endblock main %}
 
-<!--appel du fichier partiel contenant le footer avec la fonction include-->
-{% include '_footer.html.twig' %}
+{# appel du block msgfooter #}
+{% block msgfooter %}
+    <p>Retour à la page d'accueil</p>@
+{% endblock msgfooter %}
+
+{# appel du fichier partiel contenant le footer avec la fonction include #}
+{# {% include '_footer.html.twig' %} #}

@@ -1,19 +1,27 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
-
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--creation d un block pour le changement de titre de la page en fonction de la page-->
+        <title> {% block metatitle %} {% endblock metatitle %} </title>
+        <!--Lien de mon twig avec la page CSS-->
+        <link rel="stylesheet" href="{{ asset('style.css') }}">
     </head>
+
     <body>
-        {% block body %}{% endblock %}
+        <header>
+            <p>Listes des articles</p>
+        </header>
+
+        <main>
+            {% block main %} {% endblock main %}
+        </main>
+
+        <footer>
+            {% block msgfooter %} {% endblock msgfooter %}
+        </footer>
     </body>
 </html>
