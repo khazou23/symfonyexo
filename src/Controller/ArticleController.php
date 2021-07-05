@@ -7,8 +7,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ArticleController extends AbstractController
-    {
-        private $articles = [
+{
+    public $articles = [
         1 => [
             "title" => "La vaccination c'est trop géniale",
             "content" => "bablablblalba",
@@ -38,22 +38,21 @@ class ArticleController extends AbstractController
     public function liste()
     {
         //Mise en place des connexions twig
-        return $this->render('liste.html.twig',['articles' => $this->articles]);
+        return $this->render('liste.html.twig', ['articles' => $this->articles]);
     }
 
     //création de la page article  pour afficher les articles
+
     /**
      * @Route ("/article/{id}" , name="article")
      */
-    //public function article($id)
-    //{
+    public function article($id)
+    {
 //creation d un tableau avec les infos
         //il est possible et meme recommander de le mettre en prorpiété au dessus des methodes .
 
 //creation d un renvoi en lien avec le twig article pour pouvoir afficher les infos de l article en fonction de l id ajouté à l url
-      //  return $this->render('article.html.twig' , ['article'=>$articles[$id]]);
-    //}
-
+        return $this->render('article.html.twig', ['article'=>$this->articles[$id]]);
+        //}
+    }
 }
-
-?>

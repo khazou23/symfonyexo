@@ -18,8 +18,11 @@
     <!--mise en place d une boucle for pour afficher tous les articles de la liste -->
         {% for article in articles %}
         <article>
+            <!--Creation d un lien avec la fonction path pour rediriger vers une adresse URL -->
+            <a href={{ path('article', {'id': article.id}) }}>
             <h1>{{ article.title }}</h1>
             <p>{{ article.content}} </p>
+            </a>
         </article>
         {% endfor %} <!--cloture de la boucle for -->
     </main>
